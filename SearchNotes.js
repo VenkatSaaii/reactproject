@@ -1,19 +1,17 @@
-import React from "react";
+import React from 'react';
 
-const SearchNotes=(searchTerm , onScreenChange)=>{
-    return(
-        <div>
-            <input 
-                type="text"
-                placeholder="Search Notes"
-                value={searchTerm}
-                onChange={(event)=>onScreenChange(event.target.value)}
-
-
-            />
-        </div>
-
-    )
-
+function SearchNotes({ searchTerm, onSearch }) {
+  return (
+    <div>
+     <label htmlFor="search">Search Notes:</label>
+      <input
+        type="text"
+        value={searchTerm}
+        onChange={e => onSearch(e.target.value)}
+        placeholder="Search notes"
+      />
+    </div>
+  );
 }
-export default SearchNotes
+
+export default SearchNotes;
